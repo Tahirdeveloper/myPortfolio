@@ -1,5 +1,6 @@
-.App {
+body {
   text-align: center;
+  background-color:#212529;
 }
 
 .App-logo {
@@ -35,4 +36,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+.btn1{
+  float: left;
+  margin-left: 80px;
+  
+}
+.btn1 :hover{
+  background-color: #282c34;
+  outline-color: #61dafb;
+}
+.btn2{
+  text-align: center;
+  margin-top: 65px;
+
+}
+.header-image{
+  background-image: url("../src/images/header.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 500px;
+
+}
+.header-text{
+ /* padding-top: 120px; */
+ 
+ }
+ .languages-List{
+  line-height: 100px;
+  /* margin-left: 150px; */
+  /* padding-left:120px; */
+ }
+ .progress-bar{
+/* float: left; */
+ }
+.footer{
+ background-color: black;
+
 }

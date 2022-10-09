@@ -1,11 +1,11 @@
-import React from "react";
-import Buttons, { SkillCard } from "./Buttons";
+import React, { Suspense } from "react";
+import Buttons from "./Buttons";
 import { Buttons2 } from "./Buttons";
 import Myfooter from "./Footer";
 import Typewriter from 'typewriter-effect';
-import Progress from "./ProgressBar";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-
+const SkillCard= React.lazy(()=> import('./Skills'));
+const Progress=  React.lazy(() => import("./ProgressBar"));
 
 
 function Home() {
@@ -43,9 +43,13 @@ function Home() {
                     </div>
 
                 </div>
+               
                 <div className="container">
+               
                     <h1 className="text-center text-white">SERVICES</h1>
+                   
                     <div className="row my-5">
+                    <Suspense fallback= {<h1 className="text-info">Loading...</h1>}>
                         <div className="col-md-3">
                             <SkillCard imgSrc={require("../images/me.JPG")} title="Web Development" description=" In publishing and graphic design, Lorem ipsum 
                        is a placeholder text commonly used" name="See Projects" />
@@ -62,10 +66,14 @@ function Home() {
                             <SkillCard imgSrc={require("../images/me.JPG")} title="Graphics Designing" description=" In publishing and graphic design, Lorem ipsum 
                        is a placeholder text commonly used" name="See Projects" />
                         </div>
-
+                        </Suspense>
                     </div>
+                   
                 </div>
+              
                 <div className="container">
+                <Suspense fallback= {<h1 className="text-info">Loading...</h1>} >
+                
                     <h1 className="text-center text-white">Experience</h1>
                     <div className="row my-5 text-white" >
 
@@ -91,7 +99,10 @@ function Home() {
                         </div>
 
                     </div>
+                    </Suspense>
+                    <Suspense fallback={<h1>Loading...</h1>}>
                     <div className="row ">
+                   
                         <h1 className="text-white my-4">Programing Languages</h1>
                         <div className="col-md-4 bg-secondary mb-4 text-info">
                         <h3 className=" languages-List my-3 ">HTML/CSS</h3>
@@ -106,8 +117,9 @@ function Home() {
                             <ProgressBar className="my-5" animated variant="warning" now={75} label={`${75}%`} />
                             <ProgressBar className="my-5" animated variant="primary" now={60} label={`${60}%`} />
                         </div>
-                        
+                   
                     </div>
+                    </Suspense>
 
 
                 </div>
